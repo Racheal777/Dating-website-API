@@ -4,8 +4,9 @@ import { describe } from 'node:test'
 
 describe('GET / ', () => {
     it('responds with "Welcome"', async () => {
-        const response = await request(createApp()).get('/')
+        const response = await request(createApp()).get('/api/v1/')
         expect(response.status).toBe(200)
         expect(response.text).toBe('Welcome')
+        
     })
 } )
