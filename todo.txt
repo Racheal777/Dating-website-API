@@ -1,0 +1,2 @@
+1. create a server
+2. write a test for server
