@@ -1,6 +1,7 @@
 import express from 'express'
-// import cors from 'cors'
+ import cors from 'cors'
  import { datingRouter } from './router'
+ import helmet from 'helmet'
 // import cookieParser from 'cookie-parser'
 
 
@@ -11,10 +12,11 @@ export function createApp(){
   app.use(express.json())
   app.use(express.urlencoded({extended: true}))
 //   app.use(cookieParser())
-//   app.use(cors({
-//       origin: ["http://localhost:8000"],
-//       credentials: true,
-//     }))
+  app.use(helmet())
+  app.use(cors({
+      origin: ["http://localhost:8000"],
+      credentials: true,
+    }))
 
   app.use('/api/v1', datingRouter)
 

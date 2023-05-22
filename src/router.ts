@@ -5,6 +5,6 @@ import {DatingController} from '../src/controllers/index'
 
 export const datingRouter = Router()
 
-const datingController = new DatingController()
 
-datingRouter.get(DatingRoutes.CHECK_HEALTH, datingController.checkHealth)
+
+datingRouter.get(DatingRoutes.CHECK_HEALTH, DatingController.checkHealth)
