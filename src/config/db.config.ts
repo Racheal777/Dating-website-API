@@ -17,10 +17,10 @@ const options = {
 export const dbConnection = async() => {
     try {
      
-       const db =  await mongoose.connect(dbUrl, options)
-        console.log('database connection succes', db)  
+        await mongoose.connect(dbUrl, options)
+        console.log('database connection succes')  
     } catch (error) {
-      console.log('gygu',error)  
+      console.log(error)  
     }
 
    
