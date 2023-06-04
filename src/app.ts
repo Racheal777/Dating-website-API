@@ -1,9 +1,8 @@
-import express from 'express'
+ import express from 'express'
  import cors from 'cors'
  import { datingRouter } from './router'
  import helmet from 'helmet'
 // import cookieParser from 'cookie-parser'
-
 
 
 export function createApp(){
