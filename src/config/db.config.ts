@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-let dbUrl = process.env.DB ?? ""
+let dbUrl = process.env.DBLOCALLY ?? ""
 
 const options = {
   autoIndex: false, // Don't build indexes
@@ -18,7 +18,7 @@ export const dbConnection = async() => {
     try {
      
         await mongoose.connect(dbUrl, options)
-        console.log('database connection succes')  
+        console.log('database connection success')  
     } catch (error) {
       console.log(error)  
     }

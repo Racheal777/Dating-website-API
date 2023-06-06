@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon src/index.ts",
+    "start": "node src/index.ts",
     "dev": "nodemon src/index.ts"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
