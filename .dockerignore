@@ -1,7 +1,17 @@
 
 node_modules
 npm-debug.log
-build
+
 .git
 .md
 .gitignore
+
+Dockerfile
+docker*.yml
+
+
+
+.npm
+.vscode
+
+README.md

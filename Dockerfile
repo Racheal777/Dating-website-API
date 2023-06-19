@@ -2,7 +2,7 @@
 FROM node:lts-alpine
 
 # Declaring env
-ENV NODE_ENV development
+ENV NODE_ENV env
 
 # Setting up the work directory
 WORKDIR  /usr/src/app
@@ -14,15 +14,22 @@ COPY package*.json ./
 
 
 # Installing dependencies
-RUN npm install 
+RUN npm ci --only=production && npm i typescript
 
-# Copying all the files in our project
-COPY . .
+
+RUN npm install
+# Copying all the files in our project to a container image
+COPY .  /usr/src/app
+
+
+RUN npx tsc -p ./tsconfig.json
 
 # Exposing server port
 EXPOSE 5000
 
+
+
 # Starting our application
-CMD ["node" , "src/index.ts"]
+CMD ["npm" , "start"]
 
 

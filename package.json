@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node src/index.ts",
+    "start": "nodemon src/index.ts",
+    "build": "tsc --project tsconfig.json",
     "dev": "nodemon src/index.ts"
   },
-  "type": "module",
+ 
   "keywords": [],
   "author": "",
   "license": "ISC",

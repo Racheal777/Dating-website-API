@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 
-let dbUrl = process.env.DBLOCALLY ?? ""
+let dbName = process.env.DB_NAME
+let dbUrl = `mongodb://0.0.0.0:27017/${dbName}`
 
 const options = {
   autoIndex: false, // Don't build indexes
@@ -18,7 +19,7 @@ export const dbConnection = async() => {
     try {
      
         await mongoose.connect(dbUrl, options)
-        console.log('database connection success')  
+        console.log(`database connection success ${dbName}`)  
     } catch (error) {
       console.log(error)  
     }
